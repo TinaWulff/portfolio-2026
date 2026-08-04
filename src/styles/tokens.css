@@ -1,0 +1,24 @@
+:root {
+  --color-page: #252535;
+  --color-page-overlay: rgb(9 19 34 / 0.74);
+  --color-page-overlay-soft: rgb(9 19 34 / 0.48);
+  --color-paper: #f6f3ef;
+  --color-ink: #15151b;
+  --color-page-heading: #f7f4f0;
+  --color-muted: #6f7078;
+  --color-screen: #1c4348;
+  --color-sketch-border: #3395a6;
+  --color-web: #5da2a5;
+  --color-web-light: #8fbec0;
+  --color-ux: #c29176;
+  --color-ux-light: #dbad94;
+  --color-visual-art: #9170ad;
+  --color-art-light: #CCA9E9;
+  --color-general: #6ccddd;
+  --font-hand: "Mynerve", "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
+  --font-body: "MuseoModerno", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-card: 12px;
+  --shadow-sketch: 0 18px 40px rgb(0 0 0 / 0.22);
+  --texture-opacity: 0.2;
+  --texture-size: 58rem auto;
+}

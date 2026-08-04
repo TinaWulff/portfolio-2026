@@ -31,6 +31,6 @@ export const heroScreenSequence = [
   },
   {
     id: "cta",
-    lines: ["Scroll down", "to see examples.", "Or use the menu to navigate for my info."],
+    lines: ["Scroll down", "to see examples.", "Or use the menu to navigate."],
   },
 ];

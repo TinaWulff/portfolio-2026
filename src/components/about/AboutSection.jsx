@@ -21,8 +21,8 @@ const aboutCards = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="about-section mx-auto w-[80vw] max-w-6xl px-5 py-18">
-      <h2 className="font-hand text-5xl">About</h2>
+    <section id="about" className="about-section mx-auto w-[80vw] max-w-7xl px-5 py-40">
+      <h2 className="font-hand text-4xl sm:text-6xl">About</h2>
       <div className="about-card-grid" aria-label="About me">
         {aboutCards.map((card) => (
           <article className="about-card" data-category={card.category} key={card.title}>

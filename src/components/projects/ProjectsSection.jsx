@@ -13,9 +13,9 @@ export default function ProjectsSection() {
   }, [activeCategory]);
 
   return (
-    <section id="projects" className="projects-section mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="projects" className="projects-section mx-auto w-full max-w-7xl px-4 py-35 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[80vw]">
-        <h2 className="font-hand text-5xl sm:text-6xl">Projects</h2>
+        <h2 className="font-hand text-4xl sm:text-6xl">Projects</h2>
         <ProjectFilters
           activeCategory={activeCategory}
           categories={categories}

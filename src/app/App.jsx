@@ -1,17 +1,16 @@
 import Hero from "../components/hero/Hero.jsx";
 import AboutSection from "../components/about/AboutSection.jsx";
+import CVSection from "../components/cv/CVSection.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import ProjectsSection from "../components/projects/ProjectsSection.jsx";
 import SkillsSection from "../components/skills/SkillsSection.jsx";
 import logoDark from "../assets/logo-dark.png";
 import logoWhite from "../assets/logo-white.png";
 
-const cvPath = "/files/TinaWulff-CV2026.pdf";
-
 export default function App() {
   return (
     <div className="site-shell min-h-screen bg-[var(--color-page)] text-[var(--color-ink)]">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
+      <header className="fixed top-0 left-0 mx-auto flex w-full items-center justify-between px-10 py-3">
         <a className="site-logo" href="#top" aria-label="Tina Wulff portfolio">
           <img className="site-logo__image site-logo__image--light" src={logoDark} alt="Tina Wulff Web" />
           <img className="site-logo__image site-logo__image--dark" src={logoWhite} alt="" aria-hidden="true" />
@@ -27,8 +26,8 @@ export default function App() {
             <li>
               <a href="#about">About</a>
             </li>
-            <li>
-              <a href={cvPath}>CV</a>
+            <li className="hidden sm:list-item">
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -39,6 +38,7 @@ export default function App() {
         <ProjectsSection />
         <SkillsSection />
         <AboutSection />
+        <CVSection />
       </main>
 
       <Footer />

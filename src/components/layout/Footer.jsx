@@ -9,8 +9,8 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer className="footer max-w-6xl mx-auto" id="footer">
-      <div className="contact-info">
+    <footer className="footer max-w-7xl mx-auto" id="footer">
+      <div className="contact-info" id="contact">
                 <p>Tina Wulff</p>
                 <p>Copenhagen 2300</p>
                 <p>tina@tinawulff.dk</p>

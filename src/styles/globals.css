@@ -619,6 +619,11 @@ header nav {
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-ink) 18%, transparent);
 }
 
+.skill-category-pill--clear {
+  background: color-mix(in srgb, var(--color-page-heading) 20%, transparent);
+  color: var(--color-page-heading);
+}
+
 .skill-category-pill:focus-visible {
   outline: 2px solid var(--color-ink);
   outline-offset: 2px;
@@ -637,6 +642,17 @@ header nav {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .skill-chip--hidden {
+    display: none;
+  }
+
+  .skill-chip-list {
+    justify-content: center;
+    padding: 0 0.3rem;
+  }
 }
 
 /*/*/*/*/*/*/*/*/*/*/*/*/
@@ -1035,6 +1051,22 @@ align-self: center;    text-align: center;
 }
 
 @media (max-width: 600px) {
+  .projects-section {
+    width: 95%;
+  }
+
+  .projects-section > div {
+    max-width: 100%;
+  }
+
+  .skills-section,
+  .about-section,
+  .cv-section {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .hero-section {
     grid-template-columns: repeat(8, 1fr);
     padding-left: 0;

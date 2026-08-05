@@ -25,6 +25,10 @@ export default function SkillsSection() {
   }, []);
 
   useEffect(() => {
+    if (!canHoverFilter) {
+      return undefined;
+    }
+
     function handleDocumentPointerDown(event) {
       if (!categoryListRef.current) {
         return;
@@ -41,7 +45,7 @@ export default function SkillsSection() {
     document.addEventListener("pointerdown", handleDocumentPointerDown);
 
     return () => document.removeEventListener("pointerdown", handleDocumentPointerDown);
-  }, []);
+  }, [canHoverFilter]);
 
   const activeCategory = hoverCategory ?? selectedCategory;
 
@@ -56,7 +60,17 @@ export default function SkillsSection() {
   }, [activeCategory]);
 
   function handleCategoryClick(categoryId) {
+    if (!canHoverFilter) {
+      setSelectedCategory(categoryId);
+      return;
+    }
+
     setSelectedCategory((currentCategory) => (currentCategory === categoryId ? null : categoryId));
+  }
+
+  function handleShowAll() {
+    setSelectedCategory(null);
+    setHoverCategory(null);
   }
 
   function handleCategoryMouseEnter(categoryId) {
@@ -97,6 +111,16 @@ export default function SkillsSection() {
             {category.label}
           </button>
         ))}
+        {!canHoverFilter && selectedCategory ? (
+          <button
+            aria-pressed={activeCategory === null}
+            className="skill-category-pill skill-category-pill--clear"
+            onClick={handleShowAll}
+            type="button"
+          >
+            Show all
+          </button>
+        ) : null}
       </div>
       <div className="skill-chip-list">
         {skills.map((skill) => (

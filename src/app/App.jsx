@@ -16,7 +16,7 @@ export default function App() {
           <img className="site-logo__image site-logo__image--dark" src={logoWhite} alt="" aria-hidden="true" />
         </a>
         <nav aria-label="Primary navigation">
-          <ul className="flex items-center gap-4 text-sm font-medium">
+          <ul className="flex items-center gap-4 text-sm font-medium max-[450px]:text-[12px]">
             <li>
               <a href="#projects">Projects</a>
             </li>

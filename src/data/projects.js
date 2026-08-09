@@ -77,7 +77,7 @@ export const projects = [
       video: null,
     },
     links: {
-      github: "https://github.com/TinaWulff/believe-fitness-app",
+      github: "https://github.com/TinaWulff/believe-fitness",
       live: null,
     },
   }),

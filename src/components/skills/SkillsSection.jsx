@@ -68,11 +68,6 @@ export default function SkillsSection() {
     setSelectedCategory((currentCategory) => (currentCategory === categoryId ? null : categoryId));
   }
 
-  function handleShowAll() {
-    setSelectedCategory(null);
-    setHoverCategory(null);
-  }
-
   function handleCategoryMouseEnter(categoryId) {
     if (!canHoverFilter) {
       return;
@@ -111,16 +106,6 @@ export default function SkillsSection() {
             {category.label}
           </button>
         ))}
-        {!canHoverFilter && selectedCategory ? (
-          <button
-            aria-pressed={activeCategory === null}
-            className="skill-category-pill skill-category-pill--clear"
-            onClick={handleShowAll}
-            type="button"
-          >
-            Show all
-          </button>
-        ) : null}
       </div>
       <div className="skill-chip-list">
         {skills.map((skill) => (

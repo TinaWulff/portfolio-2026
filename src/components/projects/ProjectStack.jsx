@@ -58,7 +58,8 @@ export default function ProjectStack({ activeCategory, projects }) {
           onClick={showNextProject}
           type="button"
         >
-          <span aria-hidden="true">⌄</span>
+          <span aria-hidden="true">‹</span>
+          <span aria-hidden="true">›</span>
         </button>
       )}
     </div>

@@ -1,10 +1,44 @@
 import { useEffect, useState } from "react";
 
-const categoryLabels = {
-  "web-development": "Web Development",
-  "ux-ui-design": "UX/UI & Design",
-  "visual-art": "Visual Art",
+const technologyCategoryMap = {
+  react: "web-development",
+  "next.js": "web-development",
+  javascript: "web-development",
+  vite: "web-development",
+  wordpress: "web-development",
+  php: "web-development",
+  "theme development": "web-development",
+  "theme dev": "web-development",
+  css: "web-development",
+  scss: "web-development",
+  tailwind: "web-development",
+  html5: "web-development",
+  "rest api": "web-development",
+  "ux/ui design": "ux-ui-design",
+  "ux/ui web design": "ux-ui-design",
+  figma: "ux-ui-design",
+  "adobe creative cloud": "ux-ui-design",
+  "user testing": "ux-ui-design",
+  wireframes: "ux-ui-design",
+  prototypes: "ux-ui-design",
+  "content creation": "ux-ui-design",
+  "solo exhibition": "visual-art",
+  exhibition: "visual-art",
+  installation: "visual-art",
+  "mfa degree show": "visual-art",
+  "afgang 2020": "visual-art",
+  "galleri kant": "visual-art",
+  "molekyl gallery": "visual-art",
+  "fine art": "visual-art",
+  curated: "visual-art",
+  "2021": "visual-art",
+  "2023": "visual-art",
 };
+
+function getTechnologyCategory(technology) {
+  const normalizedTechnology = technology.trim().toLowerCase();
+  return technologyCategoryMap[normalizedTechnology] ?? "general";
+}
 
 export default function ProjectCard({ activeCategory, project }) {
   const galleryImages = project.media?.images?.length ? project.media.images : [project.media?.image].filter(Boolean);
@@ -37,10 +71,6 @@ export default function ProjectCard({ activeCategory, project }) {
     },
   ].filter(Boolean);
 
-  const categoryText = project.categories
-    .map((category) => categoryLabels[category] ?? category)
-    .join(" / ");
-
   return (
     <article className="project-card project-card--active" data-category={activeCategory}>
       {/* <img aria-hidden="true" className="project-card__border" src={cardBorder} alt="" /> */}
@@ -49,7 +79,7 @@ export default function ProjectCard({ activeCategory, project }) {
           <h3 className="font-hand">{project.title}</h3>
             <ul className="project-card__tags" aria-label={`${project.title} technologies`}>
             {project.technologies.map((technology) => (
-              <li key={technology}>{technology}</li>
+              <li data-tech-category={getTechnologyCategory(technology)} key={technology}>{technology}</li>
             ))}
           </ul>
           <p>{project.summary}</p>
@@ -86,8 +116,6 @@ export default function ProjectCard({ activeCategory, project }) {
             )}
           </figure>
         )}
-
-        <p className="project-card__category col-2">{categoryText}</p>
       </div>
     </article>
   );

@@ -85,7 +85,7 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="skills-section mx-auto w-[80vw] max-w-7xl px-5 py-35">
+    <section id="skills" className="skills-section mx-auto w-[80vw] max-w-7xl px-5 py-35 max-[600px]:py-20">
       <h2 className="font-hand text-4xl sm:text-6xl">Stack & Competencies</h2>
       <div
         className="skill-category-list"

@@ -236,6 +236,7 @@ header nav {
   width: min(100%, var(--project-content-max-width));
   height: 25rem;
   margin-top: 0.4rem;
+  touch-action: pan-y;
   transition: opacity 220ms ease, transform 220ms ease;
 }
 

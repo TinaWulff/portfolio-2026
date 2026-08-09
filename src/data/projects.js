@@ -33,7 +33,7 @@ export const projects = [
     primaryCategory: "web-development",
     featured: true,
     summary:
-      "WordPress website for a leadership coaching business, built with a custom theme, UX/UI design, deployment, and SEO.",
+      "Website for a leadership coaching business, built with a custom theme, UX/UI design, deployment, and SEO.",
     technologies: ["WordPress", "PHP", "Theme Development", "CSS", "UX/UI Design"],
     media: {
       image: PergrowthImage,

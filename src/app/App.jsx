@@ -18,7 +18,12 @@ export default function App() {
         <nav aria-label="Primary navigation">
           <ul className="flex items-center gap-4 text-sm font-medium max-[450px]:text-[12px]">
             <li>
-              <a href="#projects">Projects</a>
+              <a className="max-[600px]:hidden" href="#projects">
+                Projects
+              </a>
+              <a className="hidden max-[600px]:inline" href="#projects-heading">
+                Projects
+              </a>
             </li>
             <li>
               <a href="#skills">Stack</a>

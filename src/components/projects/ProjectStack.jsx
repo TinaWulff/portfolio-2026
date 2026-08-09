@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard.jsx";
 
 export default function ProjectStack({ activeCategory, projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(null);
 
   useEffect(() => {
     setActiveIndex(0);
@@ -34,9 +35,44 @@ export default function ProjectStack({ activeCategory, projects }) {
     setActiveIndex((currentIndex) => (currentIndex + 1) % projects.length);
   }
 
+  function showPreviousProject() {
+    setActiveIndex((currentIndex) => (currentIndex - 1 + projects.length) % projects.length);
+  }
+
+  function handleTouchStart(event) {
+    setTouchStartX(event.changedTouches[0]?.clientX ?? null);
+  }
+
+  function handleTouchEnd(event) {
+    if (!hasMultipleProjects || touchStartX === null) {
+      return;
+    }
+
+    const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+    const deltaX = touchEndX - touchStartX;
+
+    if (Math.abs(deltaX) < 35) {
+      setTouchStartX(null);
+      return;
+    }
+
+    if (deltaX < 0) {
+      showNextProject();
+    } else {
+      showPreviousProject();
+    }
+
+    setTouchStartX(null);
+  }
+
   return (
     <div className="project-stack" data-category={activeCategory}>
-      <div className="project-stack__cards" aria-live="polite">
+      <div
+        className="project-stack__cards"
+        aria-live="polite"
+        onTouchEnd={handleTouchEnd}
+        onTouchStart={handleTouchStart}
+      >
         {stackedBehindProjects.map((project, index) => (
           <div
             aria-hidden="true"

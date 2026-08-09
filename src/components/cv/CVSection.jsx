@@ -5,7 +5,7 @@ const cvFiles = {
 
 export default function CVSection() {
   return (
-    <section id="cv-download" className="cv-section mx-auto w-[80vw] max-w-7xl px-5 py-20 max-[600px]:py-20" aria-labelledby="cv-heading">
+    <section id="cv-download" className="cv-section mx-auto w-[80vw] max-w-7xl px-5 py-20 max-[600px]:py-20" aria-labelledby="cv-heading scroll-mt-10">
       <h2 id="cv-heading" className="font-hand text-4xl sm:text-6xl">CV</h2>
       <p className="cv-section__lead">
         Download full CV and choose your preferred language.

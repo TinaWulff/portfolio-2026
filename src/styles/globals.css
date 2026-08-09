@@ -240,6 +240,118 @@ header nav {
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
+.mockup-marquee-section {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  margin: 9.5rem 0 0;
+  border: none;
+}
+
+@media (max-width: 700px) {
+  .mockup-marquee-section {
+    width: 90vw;
+    margin-top: 6rem;
+  }
+}
+
+.mockup-marquee__description {
+  margin: 0;
+  max-width: 34rem;
+  color: color-mix(in srgb, var(--color-ink) 74%, transparent);
+}
+
+.mockup-marquee__viewport {
+  overflow: hidden;
+  padding: 1rem 0;
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.mockup-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding: 0 0.5rem;
+  animation: mockup-marquee-scroll 26s linear infinite;
+  will-change: transform;
+}
+
+.mockup-marquee__viewport:hover .mockup-marquee__track {
+  animation-play-state: paused;
+}
+
+.mockup-marquee__card {
+  display: block;
+  flex: 0 0 auto;
+  width: min(10rem, 72vw);
+  cursor: pointer;
+}
+
+.mockup-marquee__article {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgb(9 19 34 / 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.mockup-marquee__card:hover .mockup-marquee__article,
+.mockup-marquee__card:focus-visible .mockup-marquee__article {
+  transform: translateY(-0.2rem) scale(1.01);
+  border-color: color-mix(in srgb, var(--color-page-heading) 38%, transparent);
+  box-shadow: 0 16px 34px rgb(9 19 34 / 0.14);
+}
+
+.mockup-marquee__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mockup-marquee__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+.mockup-marquee__title {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.mockup-marquee__hint {
+  color: color-mix(in srgb, var(--color-ink) 62%, transparent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+}
+
+@keyframes mockup-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .mockup-marquee__viewport {
+    padding: 0.8rem 0;
+  }
+
+  .mockup-marquee__card {
+  width: min(8rem, 72vw);
+}
+}
+
 .project-card {
   --card-color: var(--color-web);
   --card-border-color: color-mix(in srgb, var(--color-web-light) 76%, white 24%);

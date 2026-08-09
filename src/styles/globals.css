@@ -166,6 +166,14 @@ header nav {
   cursor: pointer;
 }
 
+@media (max-width: 700px) {
+  .sketch-tab {
+    min-height: .2rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
 .sketch-chip {
   display: inline-flex;
   min-height: 2.25rem;
@@ -181,6 +189,13 @@ header nav {
   gap: 0.55rem;
   margin: 4rem auto 0;
 }
+
+@media (max-width: 700px) {
+  .project-filters {
+    margin: 2rem auto 0;
+}
+}
+
 
 .projects-section {
   --project-content-max-width: 60rem;
@@ -507,6 +522,10 @@ header nav {
     width: 100%;
     aspect-ratio: auto;
     min-height: 24rem;
+  }
+
+  .project-stack {
+    margin-top: 0rem;
   }
 
   .project-stack__cards {

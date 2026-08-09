@@ -245,14 +245,14 @@ header nav {
   left: 50%;
   transform: translateX(-50%);
   width: 80vw;
-  margin: 9.5rem 0 0;
+  margin: 6.5rem 0 4rem;
   border: none;
 }
 
 @media (max-width: 700px) {
   .mockup-marquee-section {
     width: 90vw;
-    margin-top: 6rem;
+    margin-top: 2rem;
   }
 }
 

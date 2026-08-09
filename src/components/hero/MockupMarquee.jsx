@@ -28,8 +28,8 @@ const mockupLinkMap = [
     github: "https://github.com/rts-cmk-wu13/pokedex-TinaWulff",
   },
   {
-    label: "Performance & Growth",
-    match: /performancegrowth/,
+    label: "ricka",
+    match: /ricka/,
     live: "https://performancegrowth.dk/",
     github: null,
   },

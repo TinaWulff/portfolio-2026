@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 
 import { categories } from "../../data/categories.js";
 import { projects } from "../../data/projects.js";
-import MockupMarquee from "./MockupMarquee.jsx";
+
 import ProjectFilters from "./ProjectFilters.jsx";
 import ProjectStack from "./ProjectStack.jsx";
 
@@ -25,7 +25,6 @@ export default function ProjectsSection() {
           onChange={setActiveCategory}
         />
         <ProjectStack activeCategory={activeCategory} projects={visibleProjects} />
-        <MockupMarquee />
       </div>
     </section>
   );

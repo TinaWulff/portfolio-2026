@@ -61,7 +61,7 @@ export const projects = [
     },
     links: {
       github: null,
-      live: null,
+      live: "https://evasteenchristensen.dk/",
     },
   }),
   createProject({
